@@ -1,0 +1,48 @@
+body{
+	margin: 3%;
+	/*color: #fffff;*/
+	/*background-color: #b2a181;*/
+
+}
+
+header h1{
+	font-size: 3.0em;
+	margin-left: 5%;
+}
+
+#profile{
+	position: absolute;
+	top: 30px;
+	right:7%;
+	float: left;
+	height: 60%;
+	border-radius: 40%;
+}
+
+.icon{
+	display: inline-block;
+	margin-left: 100px;
+	height: 50px;
+	top: 100px;
+	left: 0px;
+
+}
+
+nav h2{
+	display: inline-block;
+	margin-left: 90px;
+	top: 76px;
+}
+
+main{
+	margin: 50px 100px 0px 100px;
+
+}
+
+section{
+	margin: 50px 100px 0px 100px;;
+}
+
+footer{
+	margin: 50px 100px 0px 100px;;
+}
