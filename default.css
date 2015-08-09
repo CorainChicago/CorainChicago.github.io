@@ -34,8 +34,12 @@ nav h2{
 	top: 76px;
 }
 
+
+
 main{
+	line-height: 28px;
 	margin: 50px 100px 0px 100px;
+	width: 50%;
 
 }
 
