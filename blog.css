@@ -1,0 +1,58 @@
+body{
+	margin: 3%;
+}
+
+header h1{
+	font-size: 3.0em;
+	margin-left: 5%;
+}
+
+#profile{
+	position: absolute;
+	top: 30px;
+	right:7%;
+	float: left;
+	height: 60%;
+	border-radius: 40%;
+}
+
+.icon{
+	display: inline-block;
+	margin-left: 90px;
+	height: 40px;
+	top: 100px;
+	left: 0px;
+}
+
+.me{
+	line-height: 20px;
+}
+
+.me p{
+	margin-right: 20%;
+	margin-left: 8%;
+}
+
+nav h2{
+	display: inline-block;
+	margin-left: 70px;
+	top: 76px;
+}
+
+nav img{
+	border-radius: 40%;
+	height: 40px;
+
+}
+
+section{
+	margin: 50px 100px 0px 100px;;
+}
+
+address{
+	font-size: 22px;
+}
+
+footer{
+	margin: 50px 100px 0px 100px;;
+}
