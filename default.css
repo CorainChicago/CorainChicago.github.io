@@ -25,7 +25,15 @@ header h1{
 	height: 50px;
 	top: 100px;
 	left: 0px;
+}
 
+.me{
+	line-height: 20px;
+}
+
+.me p{
+	margin-right: 20%;
+	margin-left: 8%;
 }
 
 nav h2{
@@ -35,16 +43,12 @@ nav h2{
 }
 
 
-
-main{
-	line-height: 28px;
-	margin: 50px 100px 0px 100px;
-	width: 50%;
-
-}
-
 section{
 	margin: 50px 100px 0px 100px;;
+}
+
+address{
+	font-size: 22px;
 }
 
 footer{
