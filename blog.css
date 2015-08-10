@@ -7,6 +7,8 @@ header h1{
 	margin-left: 5%;
 }
 
+
+
 #profile{
 	position: absolute;
 	top: 30px;
@@ -33,9 +35,12 @@ header h1{
 	margin-left: 8%;
 }
 
+nav{
+	margin-left: 2%;
+}
 nav h2{
 	display: inline-block;
-	margin-left: 70px;
+	margin-left: 3%;
 	top: 76px;
 }
 
