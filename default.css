@@ -10,16 +10,12 @@ header h1{
 	margin-left: 5%;
 }
 
-img{
-	height: 60px;
-}
-
 #profile{
 	position: absolute;
 	top: 30px;
 	right:7%;
 	float: left;
-	height: 60%;
+	height: 50%;
 	border-radius: 40%;
 }
 
