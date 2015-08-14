@@ -10,6 +10,10 @@ header h1{
 	margin-left: 5%;
 }
 
+img{
+	height: 60px;
+}
+
 #profile{
 	position: absolute;
 	top: 30px;
