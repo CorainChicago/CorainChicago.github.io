@@ -24,7 +24,7 @@
  </section>
  </header>
 <article>
-  Arrays and Hashes hold <i>things</i> in Ruby. Think of a grocery list, the list in an array looks like this:
+  Arrays and hashes hold <i>things</i> in Ruby. Think of a grocery list, the list in an array looks like this:
   <p>
   <code>
     <precode>
@@ -32,11 +32,14 @@
     </precode>
     </code>
 
-<p>Nice!  That's a list.</p>  
+<p>Nice!  That's a list. Now I know what to buy.</p>  
 
-<p>So a list of items is an array. But, what if you don't want to walk with all of those heavy items home?  How would you narrow down the list at the store?You could do by weight or price, but some of those items are for a yummy meal and others are random items.  Which is important?</p>
+<p>So a list of items is an <a href="http://ruby-doc.org/core-2.2.0/Array.html">array</a>. It's a container to hold items in a group and can be referenced by the index number, starting with `0`. Why zero?  The first item in an array is a the 0 point and the count goes up from there.  If the last item is desired, you don't need to know how many items are in the array, just reference `-1`. </p>
 
-<p>A <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">hash</a> is similar to an array but with key value pairs.  Hashes are like arrays, associative forms of arrays.  Huh?</p>
+
+<p>But, what if you don't want to walk with all of those heavy items home?  How would you narrow down the list at the store?You could do by weight or price, but some of those items are for a yummy meal and others are random items.  Which is important? In an array, the list has no organization of meaning other than the order position, index, of each item.  I don't know what I must carry home versus what I should carry home. </p>
+
+<p>A <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">hash</a> is similar to an array but with key/value pairs.  Hashes are like arrays, associative forms of arrays.  Huh?</p>
 
 <p>Take the same list and put it in a hash:</p>
 <p>
@@ -46,17 +49,30 @@
     </precode>
     </code>
 
-<p>Now, looking at the list, I know that if I don't get the apples, I can't make apple pie and if I decided to not spend the cash on the beef, I won't have the beef and carrots meal. This helps my decision making.  Hashes help.</p>
+<p>Now, looking at the list, I know that if I don't get the apples, I can't make apple pie and if I decided to not spend the cash on the beef, I won't have the beef and carrots meal. This helps my decision making.  Hashes help and pie is important.</p>
 
-   
+<p>Hashes are reference through a few methods, and the order doesn't matter:
 
 
+<p>
+      <code>
+      <precode>
+      grocery_list[:apple_pie]
+      </precode>
+    </code></p>
 
+ <p> Or by using the `fetch` method
+  <code>
+    <precode>
+      grocery_list.fetch(:apple_pie) 
+      </precode>
+    </code>
 
   </p>
+  <p><i>(notice the use of `:` before the name of the key when pulling out the value paired with it)</i></p>
+     
+<p>With a hash, I know the beef and carrots don't need to be lugged home, but the apples are quite necessary.  </p>
 
-
-
-The ingredients come from two recipes:  <a href="https://newleafwellness.biz/2014/07/23/slow-cooker-beef-roast-carrots/">Beef and Carrots</a>
+</section>
 
 </body>
