@@ -11,12 +11,13 @@ header h1{
 
 #profile{
 	position: absolute;
-	top: 30px;
+	top: 10%;
 	right:7%;
 	float: left;
-	height: 60%;
+	height: 30%;
 	border-radius: 40%;
 }
+
 
 .icon{
 	display: inline-block;
@@ -46,7 +47,7 @@ nav h2{
 
 nav img{
 	border-radius: 40%;
-	height: 40px;
+	height: 30%;
 
 }
 

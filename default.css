@@ -12,10 +12,9 @@ header h1{
 
 #profile{
 	position: absolute;
-	top: 30px;
+	top: 30%;
 	right:7%;
 	float: left;
-	height: 40%;
 	border-radius: 40%;
 }
 
