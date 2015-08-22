@@ -13,9 +13,9 @@
     <img id="profile" src="../imgs/profile.jpg">
     <nav>
       <h2><a href="http://corainchicago.github.io/">Home</a><h2>
-      <h2><a href="#writing">Writing</a></h2>
-      <h2><a href="#portfolio">Project Portfolio</a></h2>
-      <h2><a href="#me">About Me</a></h2>
+      <h2><a href="http://corainchicago.github.io/#writing">Writing</a></h2>
+      <h2><a href="http://corainchicago.github.io/#portfolio">Project Portfolio</a></h2>
+      <h2><a href="http://corainchicago.github.io/#me">About Me</a></h2>
     </nav>
 <section>
   <h1>Arrays and Hashes</h1>
@@ -34,18 +34,18 @@
 
 <p>Nice!  That's a list. Now I know what to buy.</p>  
 
-<p>So a list of items is an <a href="http://ruby-doc.org/core-2.2.0/Array.html">array</a>. It's a container to hold items in a group and can be referenced by the index number, starting with `0`. Why zero?  The first item in an array is a the 0 point and the count goes up from there.  If the last item is desired, you don't need to know how many items are in the array, just reference `-1`. </p>
+<p>So a list of items is an <a href="http://ruby-doc.org/core-2.2.0/Array.html">array</a>. It's a container to hold items in a group and can be referenced by the index number, starting with `0`. Why zero?  The first item in an array is at the 0 point and the count goes up from there.  If the last item is desired, you don't need to know how many items are in the array, just reference `-1`. In an array, order matters.</p>
 
 
-<p>But, what if you don't want to walk with all of those heavy items home?  How would you narrow down the list at the store?You could do by weight or price, but some of those items are for a yummy meal and others are random items.  Which is important? In an array, the list has no organization of meaning other than the order position, index, of each item.  I don't know what I must carry home versus what I should carry home. </p>
+<p>But, what if you don't want to walk with all of those heavy items home?  How would you narrow down the list at the store?  You could do by weight or price, but some of those items are for a yummy meal and others are random items.  Which is important? In an array, the list has no organization of meaning other than the order position, index, of each item.  I don't know what I must carry home versus what I should carry home. </p>
 
-<p>A <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">hash</a> is similar to an array but with key/value pairs.  Hashes are like arrays, associative forms of arrays.  Huh?</p>
+<p>A <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">hash</a> is similar to an array but with key/value pairs.  Like arrays, hashes are also known as associative arrays. While an array's order is its index, a hash allows you to look up an object with any object type.  Huh?</p>
 
 <p>Take the same list and put it in a hash:</p>
 <p>
   <code>
     <precode>
-      grocery_list = [ :apple_pie, "apples", :pancakes, "bananas, baking powder, flour", :beef_and_carrot_meal: "wine vinegar", "eggs, carrots, beef chuck", :restock,"baking soda", :side_dish, "potatoes"]
+      grocery_list = grocery_list = { :apple_pie => "apples", :pancakes => ["bananas", "baking powder", "flour"], :beef_and_carrot_meal => ["wine vinegar", "eggs", "carrots", "beef chuck"], :restock => "baking soda", :side_dish => "potatoes" }
     </precode>
     </code>
 
@@ -69,7 +69,7 @@
     </code>
 
   </p>
-  <p><i>(notice the use of `:` before the name of the key when pulling out the value paired with it)</i></p>
+  <p>You may have noticed the use of `:` before the name of the key when pulling out the value paired with it. Use of a `:` before a value in ruby denotes a <a href="http://ruby-doc.org/core-2.2.0/Symbol.html">symbol</a>. More on that later. Just know that you could also use a string as the key to a value in your hash. If apple pie was listed in the hash instead as "apple pie", you'd look up it's ingredients with <code><precode>grocery_list["apple pie"]</precode></code>.</p>
      
 <p>With a hash, I know the beef and carrots don't need to be lugged home, but the apples are quite necessary.  </p>
 
