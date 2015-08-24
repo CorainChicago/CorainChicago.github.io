@@ -25,10 +25,42 @@
 	 </section> 
 	<section>
 
+<p>Enumerables loop through a collection (like an array or hash) one by one.</p>
 
-In this blog, you will do a bit of research on an Enumerable method and teach the method to your reader. Time-box yourself to an hour -- max 1.5 hours on your blog post. These aren't expected to be professional or perfect, but meant to show where you are at this point in your learning.
+<ul><p>Think of it in terms of a litter of kittens: </p>
+  <a href="http://www.pawschicago.org/our-work/pet-adoption/"><img src="../imgs/Litter_kittens.png"></a>
+  <li>To enumberate is to pick up each kitten one by one</li>
+  <li>Each kitten will be held</li>
+  <li>Each kitten will be petted.</li>
+  <li>Until the kitten bites or scrathes you, they can play with your hands.</li>
+  <li>Each kitten is put into a new box together. </li>
+</ul>
 
+<p>The base of Enumerators is built on `each` and methods use the idea of each loop through a collection in slightly different ways.  Be careful!  Just like the cute kitten biting your finger, enumerators that look one way can act a bit differently. If an array is a kitten, a hash is an adult cat.  Playing with one is not like playing with the other.  Methods with the same name can vary between their use on arrays and hashes.</p>
+<p>One enumberable method is called map.</p>
+<p>Map acts like each but returns differently. The map returns the array or hash for use, each discards it...or so The Well-Rounded Rubyist says...</p>
 
+<p>I tried and tried and couldn't get an example to see the effect of identical methods using each and map where the value returned was saved or discarded.  I think this comes to play in more complicated issues, <strong>so keep this in mind in 6 months when you're staring at a block of code and swearing</strong>.  This tidbit might stop the swearing and start a high-five.</p>
+
+<p>Then what's the difference?  I found each can't take a bang(!) and map can.  
+  <code>
+    <precode>
+      list = ([1, 2, 3])
+      def method_each(list)
+        list.each {|x| x * 3}
+      end
+    </precode>
+    </code>
+
+    <code>
+    <precode>
+      def method_map!(list)
+        list.map! {|x| x * 3}
+      end
+    </precode>
+    </code>
+<p>The return for method_each is [1,2,3] but method_map! changes list to [3,6,9].  So map can destruct the object and each can't. </p>
+<section>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
