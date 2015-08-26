@@ -19,17 +19,17 @@
     </nav>
   </head>
 	<section>
-	  <h1>Enumberables for Fun</h1>
-	  <h2>It's a long word for an easy idea</h2>
+	  <h1>Enumberables with Kittens</h1>
+	  <h2>It's a long word for picking up kittens.</h2>
 	  <h4>August 21, 2015</h4>
 	 </section> 
 	<section>
 
 <p>Enumerables loop through a collection (like an array or hash) one by one.</p>
 
-<ul><p>Think of it in terms of a litter of kittens: </p>
+<p>Think of it in terms of a litter of kittens: </p>
   <a href="http://www.pawschicago.org/our-work/pet-adoption/"><img src="../imgs/Litter_kittens.png"></a>
-  <li>To enumberate is to pick up each kitten one by one</li>
+  <ul><p>To enumberate is to pick up each kitten one by one</p>
   <li>Each kitten will be held</li>
   <li>Each kitten will be petted.</li>
   <li>Until the kitten bites or scrathes you, they can play with your hands.</li>
@@ -45,21 +45,24 @@
 <p>Then what's the difference?  I found each can't take a bang(!) and map can.  
   <code>
     <precode>
-      list = ([1, 2, 3])
-      def method_each(list)
-        list.each {|x| x * 3}
-      end
+    <p>list = ([1, 2, 3])</p>
+    <p>def method_each(list)</p>
+    <p>list.each {|x| x * 3}</p>
+     <p> end
     </precode>
     </code>
 
     <code>
     <precode>
-      def method_map!(list)
-        list.map! {|x| x * 3}
-      end
+      <p>def method_map!(list)</p>
+        <p>list.map! {|x| x * 3}</p>
+      <p>end</p>
     </precode>
     </code>
-<p>The return for method_each is [1,2,3] but method_map! changes list to [3,6,9].  So map can destruct the object and each can't. </p>
+
+<p>The return for method_each is [1,2,3] but method_map! changes list to [3,6,9].  So map can destruct the object and each can't, but kittens are always cute. </p>
+
+
 <section>
 
 	<script>
