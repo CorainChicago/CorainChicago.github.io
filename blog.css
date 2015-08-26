@@ -54,6 +54,13 @@ nav img{
 
 }
 
+code{
+	line-height: 1.8em;
+	margin-right: 10%;
+	margin-left: 10%;
+
+}
+
 section{
 	margin: 50px 100px 0px 100px;;
 }
