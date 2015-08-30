@@ -1,5 +1,7 @@
 body{
+	font-family: Karla, Times, Ariel
 	margin: 3%;
+
 	/*color: #fffff;*/
 	/*background-color: #b2a181;*/
 
@@ -45,6 +47,11 @@ nav h2{
 
 section{
 	margin: 50px 100px 0px 100px;;
+}
+
+section p img{
+	height: 20em;
+	width: auto;
 }
 
 address{
