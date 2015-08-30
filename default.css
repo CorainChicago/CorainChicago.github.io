@@ -49,9 +49,10 @@ section{
 	margin: 50px 100px 0px 100px;;
 }
 
-section p img{
+section img{
 	height: 20em;
 	width: auto;
+	border-radius: 30%;
 }
 
 address{
