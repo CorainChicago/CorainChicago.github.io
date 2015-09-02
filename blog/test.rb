@@ -7,10 +7,8 @@ class  Car2
 	end 
 
 	def describe_car
-		puts "It\s a #{@color} with a #{@make} engine, #{@model} wheels, and the licence plate number is #{@licence_plate}."
-
+		puts "It's a #{@color} with a #{@make} engine, #{@model} wheels, and the licence plate number is #{@licence_plate}."
 	end
-
 end
 test_car_2 = Car2.new('red', 'Toyota', 'Camry', 'WJE 910')
 puts test_car_2.describe_car
@@ -52,7 +50,7 @@ class  Car1
 	end
 
 	def describe_car
-		puts "It\s a #{@body} with a #{@engine} engine, #{@wheels} wheels, and #{@steer} steering."
+		puts "It's a #{@body} with a #{@engine} engine, #{@wheels} wheels, and #{@steer} steering."
 	end
 	
 	
@@ -61,3 +59,7 @@ end
 test_car_1 = Car1.new('sedan', 'V8', '235/30R20', 'power')
 
 puts test_car_1.describe_car
+
+
+
+
