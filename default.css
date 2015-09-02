@@ -10,10 +10,10 @@ header h1{
 
 #profile{
 	position: absolute;
-	top: 10%;
+	top: 3%;
 	right:7%;
 	float: left;
-	height: 30em;
+	height: 25em;
 	border-radius: 40%;
 }
 
@@ -39,9 +39,13 @@ header h1{
 	border-radius: 0%;
 }
 
+nav{
+	margin-left: 6%;
+}
+
 nav h2{
 	display: inline-block;
-	margin-left: 90px;
+	margin-right: 3%;
 	top: 76px;
 }
 
