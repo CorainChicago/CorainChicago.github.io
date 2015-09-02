@@ -1,10 +1,6 @@
 body{
 	font-family: Karla, Times, Ariel
 	margin: 3%;
-
-	/*color: #fffff;*/
-	/*background-color: #b2a181;*/
-
 }
 
 header h1{
@@ -17,7 +13,7 @@ header h1{
 	top: 10%;
 	right:7%;
 	float: left;
-	height: 40%;
+	height: 30em;
 	border-radius: 40%;
 }
 
@@ -38,6 +34,11 @@ header h1{
 	margin-left: 8%;
 }
 
+.code img{
+	height: 30em;
+	border-radius: 0%;
+}
+
 nav h2{
 	display: inline-block;
 	margin-left: 90px;
@@ -52,7 +53,10 @@ section{
 section img{
 	height: 22em;
 	width: auto;
-	border-radius: 30%;
+}
+.code img{
+	height: 30em;
+	border-radius: 0%;
 }
 
 address{
