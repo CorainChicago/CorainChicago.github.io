@@ -70,3 +70,7 @@ address{
 footer{
 	margin: 50px 100px 0px 100px;;
 }
+
+footer p {
+	font-size: 1.8em;
+}

@@ -50,11 +50,6 @@ nav h2{
 	top: 76px;
 }
 
-/*nav img{
-	border-radius: 40%;
-	height: 30%;
-
-}*/
 
 ul li{
 	margin-left: 10%;
@@ -80,4 +75,8 @@ address{
 
 footer{
 	margin: 50px 100px 0px 100px;;
+}
+
+footer p {
+	font-size: 1.8em;
 }
