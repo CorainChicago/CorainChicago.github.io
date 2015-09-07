@@ -1,3 +1,5 @@
+
+
 class  Car2
 	def initialize (color, make, model, licence_plate)
 		@color = color
