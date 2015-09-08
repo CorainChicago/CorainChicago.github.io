@@ -1,22 +1,24 @@
 
 
-class  Car2
-	def initialize (color, make, model, licence_plate)
-		@color = color
-		@make = make
-		@model = model
-		@licence_plate = licence_plate
-	end 
+numbers = [3, 4, 5]
 
-	def describe_car
-		puts "It's a #{@color} with a #{@make} engine, #{@model} wheels, and the licence plate number is #{@licence_plate}."
-	end
+#Bloc
+
+p numbers.each {|num| num + 1}
+
+p numbers.each do |num|
+	num + 1
 end
-test_car_2 = Car2.new('red', 'Toyota', 'Camry', 'WJE 910')
-puts test_car_2.describe_car
 
+#Proc
+add_one = Proc.new {|num| num + 1}
 
+p add_one.map!(numbers)
 
+#Lambda
+puts "This is with lambda"
+add_one_lambda = lambda {|num| num + 1}
+p numbers.add_one_lambda
 
 
 
