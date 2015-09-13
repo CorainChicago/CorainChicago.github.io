@@ -1,15 +1,17 @@
 body{
 	font-family: Karla, Times, Ariel;
-	margin: 2%;
+	margin: 1%;
 }
 
 header{
-	background-image: url("imgs/Background.png");
-	text-shadow: 3px 2px 3px white;
-	margin: 10px;
+	margin: 8%;
 }
 
- header img.bg{/* Set up proportionate scaling */
+header h1{
+	font-size: 3.8em;
+}
+
+header img.bg{/* Set up proportionate scaling */
   /* Set rules to fill background */
   min-height: 100%;
   min-width: 1024px;
@@ -25,15 +27,14 @@ header{
 }
 }
 
-header h1{
-	font-size: 4.0em;
-	margin-left: 10%;
+h1{
+	font-size: 3.0em;
 }
 
 #profile{
 	border-radius: 40%;
 	position: absolute;
-	top: 3%;
+	top: 2%;
 	right:8%;
 	float: left;
 	height: 22em;
@@ -61,14 +62,9 @@ header h1{
 	border-radius: 0%;
 }
 
-nav{
-	margin-left: 6%;
-}
-
 nav h2{
 	display: inline-block;
 	margin-right: 3%;
-	top: 76px;
 }
 img.bg {
   /* Set rules to fill background */
@@ -93,7 +89,7 @@ img.bg {
 }
 
 section{
-	margin: 50px 100px 0px 100px;;
+	margin: 10% -8% -7% 8%;
 }
 
 section img{
