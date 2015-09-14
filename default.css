@@ -3,6 +3,7 @@ body{
 	margin: 1%;
 }
 
+
 header{
 	margin: 8%;
 }
@@ -39,6 +40,17 @@ h1{
 	float: left;
 	height: 22em;
 }
+
+@media screen and (max-width: 700px){
+  #profile{
+	border-radius: 40%;
+	position: absolute;
+	top: 2%;
+	height: 10em;
+}
+}
+
+
 
 .icon{
 	display: inline-block;
