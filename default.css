@@ -41,16 +41,13 @@ h1{
 	height: 22em;
 }
 
-@media screen and (max-width: 500px){
-  #profile{
-	border-radius: 40%;
-	position: absolute;
-	height: 5em;
-	}
-	img{
-		height: 3em;
-	}
-}
+@media screen and (max-width: 480px){
+  #profile {
+    border-radius: 40%;
+    position: absolute;
+    height: 5em;
+  }
+}}
 
 
 
