@@ -47,16 +47,14 @@ h1{
     position: absolute;
     height: 5em;
   }
-}}
-
-
+}
 
 .icon{
 	display: inline-block;
-	margin-left: 100px;
-	height: 50px;
-	top: 100px;
-	left: 0px;
+	margin-left: 2%;
+	margin-right: 2%;
+	height: 3em;
+
 }
 
 .me{
@@ -92,13 +90,6 @@ img.bg {
   left: 0;
 }
 
-@media screen and (max-width: 1024px) {  Specific to this particular image 
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-}
-
 section{
 	margin: 10% -8% -7% 8%;
 }
@@ -117,7 +108,7 @@ address{
 }
 
 footer{
-	margin: 50px 100px 0px 100px;;
+	margin: 8%;
 }
 
 footer p {
