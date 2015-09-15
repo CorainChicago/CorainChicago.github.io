@@ -1,4 +1,5 @@
 body{
+	font-family: Karla, Times, Ariel;
 	margin: 3%;
 }
 
@@ -29,6 +30,7 @@ section p img{
 	height: 20em;
 	border-radius: 30%;
 }
+
 @media screen and (max-width: 480px){
   #profile {
     border-radius: 40%;
@@ -45,14 +47,6 @@ section p img{
 
 }
 
-.me{
-	line-height: 20px;
-}
-
-.me p{
-	margin-right: 20%;
-	margin-left: 8%;
-}
 
 nav{
 	margin-left: 2%;
