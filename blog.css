@@ -21,6 +21,11 @@ h3{
 	border-radius: 40%;
 }
 
+section{
+	margin-right: 20%;
+	margin-left: 20%;
+}
+
 section p img{
 	height: 20em;
 	border-radius: 30%;
@@ -54,6 +59,7 @@ nav h2{
 
 ul li{
 	margin-left: 10%;
+	margin-right: 10%;
 }
 
 code{
@@ -66,9 +72,6 @@ code p{
 	margin-left: 7%;
 }
 
-section{
-	margin: 50px 100px 0px 100px;;
-}
 
 address{
 	font-size: 22px;
