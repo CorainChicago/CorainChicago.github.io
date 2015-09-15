@@ -39,7 +39,7 @@ table
 }
 
 @media screen and (max-width: 500px){
-	  header h1{
+	header h1{
 		font-size: 2.0em;
 	}
 
@@ -56,13 +56,12 @@ table
 	}
 
   #profile{
-	border-radius: 45%;
-	position: absolute;
-	height: 5em;
+	display: none;
 	}
-	img{
+	/*img{
 		height: 3em;
 	}
+}*/
 }
 
 @media screen and (max-width: 1300px){
@@ -81,16 +80,26 @@ table
 		font-size: 1.2em;
 	}
   #profile{
-	border-radius: 45%;
+  	display: none;
+	/*border-radius: 45%;
 	position: absolute;
-	height: 5em;
+	height: 5em;*/
 	}
-	img{
+	/*img{
 		height: 3em;
-	}
+	}*/
 }
 
-
+@media (min-width: 1301px) and (max-width: 3000px){
+#profile{
+	border-radius: 40%;
+	position: absolute;
+	top: 2%;
+	right:8%;
+	float: left;
+	height: 17em;
+}
+}
 
 .icon{
 	display: inline-block;
