@@ -1,6 +1,5 @@
 body{
 	margin: 3%;
-	background-image: url("Background.png");
 }
 
 header h1{
@@ -13,12 +12,12 @@ h3{
 }
 
 #profile{
-	position: absolute;
-	top: 10%;
-	right:7%;
-	float: left;
-	width: 20%;
 	border-radius: 40%;
+	position: absolute;
+	top: 2%;
+	right:8%;
+	float: left;
+	height: 22em;
 }
 
 section{
@@ -30,12 +29,20 @@ section p img{
 	height: 20em;
 	border-radius: 30%;
 }
+@media screen and (max-width: 480px){
+  #profile {
+    border-radius: 40%;
+    position: absolute;
+    height: 5em;
+  }
+}
+
 .icon{
 	display: inline-block;
-	margin-left: 90px;
-	height: 40px;
-	top: 100px;
-	left: 0px;
+	margin-left: 2%;
+	margin-right: 2%;
+	height: 3em;
+
 }
 
 .me{
@@ -78,7 +85,7 @@ address{
 }
 
 footer{
-	margin: 50px 100px 0px 100px;;
+	margin: 10%;
 }
 
 footer p {
