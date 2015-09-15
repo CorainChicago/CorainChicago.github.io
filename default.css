@@ -12,12 +12,21 @@ header{
 
 
 header h1{
-	font-size: 3.8em;
+	font-size: 6.0em;
 }
 
-h1{
-	font-size: 3.0em;
+h1, h2{
+	font-size: 3.2em;
 }
+
+h2, h4{
+	font-size: 2.0em;
+}
+
+h4, p{
+	font-size: 1.2em;
+}
+
 
 #profile{
 	border-radius: 40%;
@@ -25,12 +34,53 @@ h1{
 	top: 2%;
 	right:8%;
 	float: left;
-	height: 22em;
+	height: 17em;
 }
 
 @media screen and (max-width: 500px){
+	  header h1{
+		font-size: 2.0em;
+	}
+
+	h1, h2{
+		font-size: 1.2em;
+	}
+
+	h2, h4{
+		font-size: 0.8em;
+	}
+
+	h4, p{
+		font-size: 0.8em;
+	}
+
   #profile{
-	border-radius: 40%;
+	border-radius: 45%;
+	position: absolute;
+	height: 5em;
+	}
+	img{
+		height: 3em;
+	}
+}
+
+@media screen and (max-width: 1300px){
+  	header h1{
+	font-size: 3.2em}
+
+	h1, h2{
+		font-size: 2.0em;
+	}
+
+	h2, h4{
+		font-size: 1.2em;
+	}
+
+	h4, p{
+		font-size: 1.2em;
+	}
+  #profile{
+	border-radius: 45%;
 	position: absolute;
 	height: 5em;
 	}
