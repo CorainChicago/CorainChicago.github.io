@@ -109,9 +109,6 @@ table
 	left: 0px;
 }
 
-.me{
-	line-height: 20px;
-}
 
 
 nav h2{
@@ -128,6 +125,13 @@ section{
 section img{
 	height: 22em;
 	width: auto;
+}
+
+li{
+	font-size: 1.2em;
+	line-height: 1.8em;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 address{
