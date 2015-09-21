@@ -27,7 +27,12 @@ h4, p{
 	font-size: 1.2em;
 }
 
-table 
+table{
+	width: 80%;
+} 
+tr{
+	width: 80%;
+}
 
 #profile{
 	border-radius: 40%;

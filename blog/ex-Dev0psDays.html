@@ -170,8 +170,93 @@ Monitor first
 
 
 
+Windy city Rails
 
 
+DNS: Domain name system
+
+rubygem.org. A IN
+
+	Ask local cache
+	Operating system
+	Searching at local router
+	ISP (the cloud)
+	Registry = look in org file = Then Registrar = the Name servers
+
+
+rubygem.org. 3600 (ttl) - tells the cache how long to keep it around
+IN (class)
+A (record)
+54.186.105.15
+
+UDP = User datagram protocol - fast but no guarantee for delivery
+TCP  = transmission Control Protocol - slower than UDP and handshake overhead -  uses flow control to guarantee delvery
+
+
+Browswer opens a socket
+
+BGP - Border Gateway Protocol
+
+Reuest and request headers
+	GET/HTTP/1.1
+	Accept: text/html
+	accept-encoding: gzip, deflate, sdash
+	eccept language;, en-us
+	connection: keep/alive
+	Host: ruby gems.org
+
+	Responses:  HTTP/1.1 200 OK, 404 not found, 500 code issue
+
+	Rinse and repeat
+	download the HTML documetn and parse the info
+	create new connections to repeat it
+
+
+	Eileen 
+
+	Benchmarking
+	profiling - finding what is slow
+
+	get a baseline
+
+	github.com/eileencodes/integarion_performance_test
+
+	time not a good baseline
+
+
+	benchmark-ips -  on github is a good gem to 
+
+	find the culpits
+
+	RubyProf -  finds the culprit
+	 data can be overwhelming
+
+	 Stack Prof -  focused profiling
+
+	 Had a bug
+
+	 RubyVM.stat
+
+	 caching is expensive
+
+	 allocation tracer - find garbage collection
+
+
+
+	 Kelsey Hightowner
+	 Hide the complexity of Ruby
+
+	 Don't pull random gems from the 
+
+	 containers are packages and containers, enforces memory restrictions
+
+	 Kubernetes - allows us to 
+
+	 do retry connections - 
+
+	 scheduler
+
+	 pod to deploy the database
 
 
 
