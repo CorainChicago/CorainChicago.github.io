@@ -20,12 +20,17 @@
       <h3>An enthusiastic coder</h3>
   </header>
   <section>
-	  <h1>Week 2 of DBC</h1>
-	  <h2>Comfort and Uncomfort</h2>
+	  <h1>Messages Between/h1>
+	  <h2>Objects sending messages between</h2>
 	  <h4>October 9, 2015</h4>
 	 </section>
 <section>
-
+<p>Objects should send messages between each other, not know about each other. </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 
 </section>
 <footer>
