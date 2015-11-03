@@ -3,7 +3,7 @@ body{
 	margin: 1%;
 }
 
-	
+
 header{
 	margin-right: 8%;
 	margin-left: 8%;
@@ -29,7 +29,7 @@ h4, p{
 
 table{
 	width: 80%;
-} 
+}
 tr{
 	width: 80%;
 }
@@ -63,13 +63,9 @@ tr{
   #profile{
 	display: none;
 	}
-	/*img{
-		height: 3em;
-	}
-}*/
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1000px){
   	header h1{
 	font-size: 3.2em}
 
@@ -86,16 +82,11 @@ tr{
 	}
   #profile{
   	display: none;
-	/*border-radius: 45%;
-	position: absolute;
-	height: 5em;*/
 	}
-	/*img{
-		height: 3em;
-	}*/
+
 }
 
-@media (min-width: 1301px) and (max-width: 3000px){
+@media (min-width: 1001px) and (max-width: 2000px){
 #profile{
 	border-radius: 40%;
 	position: absolute;
