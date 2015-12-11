@@ -3,6 +3,9 @@ body{
 	margin: 3%;
 }
 
+header{
+	
+}
 header h1{
 	font-size: 4.0em;
 	margin-left: 7%;
@@ -44,7 +47,6 @@ section p img{
 	margin-left: 2%;
 	margin-right: 2%;
 	height: 3em;
-
 }
 
 
