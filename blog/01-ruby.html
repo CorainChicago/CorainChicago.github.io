@@ -21,11 +21,43 @@
       <h3>An enthusiastic coder</h3>
   </header>
   <section>
-    <h1>Title</h1>
-    <h2>Header</h2>
-    <h4>Date</h4>
+    <h1>Why Does My Computer Not Calculate Right?</h1>
+    <h2>Ruby and Floats: A lesson we all learn</h2>
+    <h4>March 8, 2016</h4>
    </section> 
 <section>
+
+  <p>So, I was minding my own business, suming up prices in a method, when this happened: </p>
+
+  <pre class="ruby">
+    <code>
+     irb(main):001:0> 1 + 1
+      => 2
+      irb(main):002:0> 1.0 + 1.0
+      => 2.0
+      irb(main):003:0> 31.0 + 21.0
+      => 52.0
+      irb(main):004:0> 31.05 + 21.06
+      => 52.11
+      irb(main):005:0> 31.05 + 321.06
+      => 352.11
+      irb(main):006:0> 831.05 + 321.06
+      => 1152.11
+      irb(main):007:0> 831.75 + 321.06
+      => 1152.81
+      irb(main):008:0> 831.75 + 321.96
+      => 1153.71
+      irb(main):009:0> 831.75 + 4321.96
+      => 5153.71
+      irb(main):010:0> 831.75 + 4321.76
+      => 5153.51
+      irb(main):011:0> 831.35 + 4321.76
+      => 5153.110000000001
+      irb(main):012:0> 
+    </code>
+  </pre>
+
+  WHAAAAAAAAATTTT<p>
 
 </section>
 <footer>
