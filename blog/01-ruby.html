@@ -27,40 +27,55 @@
    </section> 
 <section>
 
-  <p>So, I was minding my own business, suming up prices in a method, when this happened: </p>
+  <p>So, I was minding my own business, adding number up for fun in irb, when this happened: </p>
 
   <pre class="ruby">
     <code>
-     irb(main):001:0> 1 + 1
-      => 2
-      irb(main):002:0> 1.0 + 1.0
+      irb> 1.0 + 1.0
       => 2.0
-      irb(main):003:0> 31.0 + 21.0
-      => 52.0
-      irb(main):004:0> 31.05 + 21.06
-      => 52.11
-      irb(main):005:0> 31.05 + 321.06
-      => 352.11
-      irb(main):006:0> 831.05 + 321.06
-      => 1152.11
-      irb(main):007:0> 831.75 + 321.06
-      => 1152.81
-      irb(main):008:0> 831.75 + 321.96
-      => 1153.71
-      irb(main):009:0> 831.75 + 4321.96
-      => 5153.71
-      irb(main):010:0> 831.75 + 4321.76
-      => 5153.51
-      irb(main):011:0> 831.35 + 4321.76
-      => 5153.110000000001
-      irb(main):012:0> 
+      irb> 1.4 + 1.2
+      => 2.5999999999999996
     </code>
   </pre>
 
-  WHAAAAAAAAATTTT<p>
-
+  <p> WHAAAAAAAAATTTT!!!  Computers live off 0 and 1, pure logic, so the return should be 2.6 not 2.5999999999999996. Where did all the 9s come from? How can it not add correctly?</p>
 </section>
-<footer>
+
+<section>
+  <h3>So What's Happening?</h3>
+  <p>Adding 1.0 to 1.0 pruduces the correct result, 2.0.  Adding 1.4 to 1.2 should produce 2.6, but instead produces 2.5999999999999996.   This is not correct, the amount of 9s is infurating and the cause is the type of object 1.0 is in Ruby, a Float.  </p>
+
+  <p>In lay terms, a float is the way to represent a number that has a decimal point. </p>
+   <pre class="ruby">
+    <code>
+      irb> 1.class
+      => Fixnum
+      irb> 1.0.class
+      => Float
+    </code>
+  </pre>
+  <p>All of these are a representation of one in different formats.  If the number has a decimal, it's a Float and not a Fixnum (and does calculations correctly). The <a href="http://ruby-doc.org/core-2.2.0/Float.html"> Ruby docs </a> say this about Floats </p>
+  <p> "Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.
+
+  Floating point has a different arithmetic and is an inexact number." </p>
+  <p>Why would we need "an inexact number"? </p>
+  ...
+  <p>The answer is no, no we don't. It's like text aligned a bit off-center.</p>
+  <p>So most Ruby devs feel this at some point, they are minding their own business a coding an application which needs a decimal point. Normally this decimal point is for money.  Money is important and <span id="pow">POW</span> all hell breaks lose when the price of a list of times totals to an amount wiht five decimal places.</p>
+  </section>
+  <section>
+    <h3>But, Why?</h3>
+    <p>Floats are inacurate because of decisions make by men long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and ... well... Hindsight is 20 20. The way the floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision.  And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'eesotoric'</p>
+    <p>Then again, you are reading this and wondering when the solution comes about</p>
+  </section>
+  <section>
+    <h3>So, What's the solution</h3>
+
+    <p> If your first thought is to round the total, read further. I only know because I tried it, banged my head against the wall with getting a recurision method to work. </p>
+    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is what you can use when you have a decimal point, need to calculate with it (and not just display). It has arbitrary-precision, not to be confused with single or double precision.  </p>
+
+  </section>
+  <footer>
     <p>Contact Me: I code, I pair, and I share</p>
     <address><a href="mailto: chaysmagan@gmail.com"> <img class ='icon' src="../imgs/Mail.png"></a>
     <a href="https://twitter.com/CorainChicago"><img class ='icon' src="../imgs/Twitter.png"></a>
