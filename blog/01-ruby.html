@@ -38,14 +38,14 @@
     </code>
   </pre>
 
-  <p> WHAAAAAAAAATTTT!!!  Computers live off 0 and 1, pure logic, so the return should be 2.6 not 2.5999999999999996. Where did all the 9s come from? How can it not add correctly?</p>
+  <p> Computers work off of logice and run off of 0 and 1, so the return should be 2.6 not 2.5999999999999996. Where did all the 9s come from? How come the computer did not add correctly? </p>
 </section>
 
 <section>
   <h3>So What's Happening?</h3>
-  <p>Adding 1.0 to 1.0 pruduces the correct result, 2.0.  Adding 1.4 to 1.2 should produce 2.6, but instead produces 2.5999999999999996.   This is not correct, the amount of 9s is infurating and the cause is the type of object 1.0 is in Ruby, a Float.  </p>
+  <p>Adding 1.0 to 1.0 produces the correct result, 2.0.  Adding 1.4 to 1.2 should produce 2.6, but instead produces 2.5999999999999996.   This is not correct, the amount of nines is infurating.  The reason for the error comes from decimal points being float objects in Ruby. Fixed numbers (Fixnum) can do math correctly in Ruby and float numbers do not reliable produce the correct result.   </p>
 
-  <p>In lay terms, a float is the way to represent a number that has a decimal point. </p>
+  <p>In lay terms, a float is the way to represent a number that has a decimal point.</p>
    <pre class="ruby">
     <code>
       irb> 1.class
@@ -54,7 +54,10 @@
       => Float
     </code>
   </pre>
-  <p>All of these are a representation of one in different formats.  If the number has a decimal, it's a Float and not a Fixnum (and does calculations correctly). The <a href="http://ruby-doc.org/core-2.2.0/Float.html"> Ruby docs </a> say this about Floats </p>
+
+  <p>(the '.class' gives a user the class of an object and it terribly useful when debugging)</p>
+
+  <p>All of these are a representation of ONE in different formats.  If the number has a decimal, it's a Float and not a Fixnum (and does calculations correctly). The <a href="http://ruby-doc.org/core-2.2.0/Float.html"> Ruby docs </a> say this about Floats </p>
   <p> "Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.
 
   Floating point has a different arithmetic and is an inexact number." </p>
@@ -65,7 +68,7 @@
   </section>
   <section>
     <h3>But, Why?</h3>
-    <p>Floats are inacurate because of decisions make by men long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and ... well... Hindsight is 20 20. The way the floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision.  And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'eesotoric'</p>
+    <p>Floats are inacurate because of decisions make by men long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and ... well... Hindsight is 20 20. The way floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision.  And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'eesotoric'.  In summary, floats lack accuracy because they are stores in the computer's memory in a way which causes issues with math functions. </p>
     <p>Then again, you are reading this and wondering when the solution comes about</p>
   </section>
   <section>
