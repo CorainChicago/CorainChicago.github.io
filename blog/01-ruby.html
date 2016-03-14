@@ -75,7 +75,19 @@
     <h3>So, What's the solution</h3>
 
     <p> If your first thought is to round the total, read further. I only know because I tried it, banged my head against the wall with getting a recurision method to work. </p>
-    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is what you can use when you have a decimal point, need to calculate with it (and not just display). It has arbitrary-precision, not to be confused with single or double precision.  </p>
+    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is not a joke. Big Decimal is the class to use to calculate with decimals (and not just display). It has arbitrary-precision, not to be confused with single or double precision, arbitrary-precision is better.   </p>
+
+     <pre class="ruby">
+      <code>
+        irb> total = BigDecimal.new('1.0') + BigDecimal.new('1.0')
+        => #<BigDecimal:7fd1c386f078,'0.2E1',9(18)>
+        irb> total.to_f
+        => 2.0
+      </code>
+    </pre>
+
+ 
+
 
   </section>
   <footer>
