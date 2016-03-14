@@ -75,7 +75,7 @@
     <h3>So, What's the solution</h3>
 
     <p> If your first thought is to round the total, read further. I only know because I tried it, banged my head against the wall with getting a recurision method to work. </p>
-    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is not a joke. Big Decimal is the class to use to calculate with decimals (and not just display). It has arbitrary-precision, not to be confused with single or double precision, arbitrary-precision is better.   </p>
+    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is not a joke. Big Decimal is the class to use to calculate with decimals (and not just display). It has arbitrary-precision, not to be confused with single or double precision, arbitrary-precision is better.  <span id="humor"> I'm making fun of it a bit while I must acknowledge that how the computer stores data is important.  It's important to know about but maybe not invest too much energy into unless you are interested in it or run into a problem which might come from it.  It's similar to my idea of learning to make tortillas, yes it would be usefule but no, the time </span> </p>
 
      <pre class="ruby">
       <code>
@@ -86,8 +86,61 @@
       </code>
     </pre>
 
+    <p>In the example above, both floats are put into a BigDecimal oject and then have to be taken out of it. It feels a bit odd, put the numbers in to an object to take it out to get the results of the calculation.</p>
+    <p>There's a gem for working with money called <a href="https://github.com/RubyMoney/money">Money</a></p>
  
 
+ <pre class="ruby">
+    <code>
+      irb> require 'money'
+      => true
+      irb> total = Money.new(1.00, "USD") + Money.new(1.00, "USD")
+      => #<Money fractional:2 currency:USD>
+      irb> total.fractional
+      => 2
+      irb> total.currency
+      => #<Money::Currency id: usd, priority: 1, symbol_first: true, thousands_separator: ,, html_entity: $, decimal_mark: ., name: United States Dollar, symbol: $, subunit_to_unit: 100, exponent: 2.0, iso_code: USD, iso_numeric: 840, subunit: Cent, smallest_denomination: 1>
+    </code>
+  </pre>
+
+    <p>I ran `gem install Money` before going into irb. </p>
+
+    <p>The Money gem handles currencies.  Notice how the object has an amount ("1.00") and a currency ("USD").  Total is a Money object with an amount (the total) and a whole ton of extra information about the currency stored in it, like the symbol. It seems like a bit excessive until looking at the docs to realize all the baked in functionality.  If you had to convert into money from an unfamiliar country, the currency information would be useful. </p>
+
+    <p>Think you can round? </p>
+
+    <pre class="ruby">
+    <code>
+      irb> total = 1.0 + 1.0
+      => 2.0
+      irb> total = 1.4 + 1.2
+      => 2.5999999999999996
+      irb> total.round
+      => 3
+      irb> total.round(2)
+      => 2.6
+      irb(main):005:0> 
+    </code>
+  </pre>
+
+  <p>It worked this time but feels unreliable for working other times. It's not reliable and you will either find the problem yourself or find out the hard way.</p>
+
+  <p>One last option is to use this code which is string conversion<p>
+
+    <pre class="ruby">
+    <code>
+      irb> total = 1.4 + 1.2
+      => 2.5999999999999996
+      irb> '%.02f' % total
+      => "2.60"
+    </code>
+  </pre>
+
+  <p>This might be a lesson in "Don't use everything you find on Stackoverflow". It works, but is not idea.  I'm not the expert on this but used it in a code challenge and this feedback "Uses String conversions to compensate for floating point math issues" in the negative column.  Not everything that works is right. </p>
+
+  <p>To deal with floats when doing math in Ruby, the options are BigDecimal, the Money gem, or string conversion.  Rounding will not consistently work and people tend to want their numbers to be accurate. The Money gem is the tool if you are doing math to money (it was nicely named) and BigDecimal is good for general use.  The string conversion method works, but feels kinda hacky so I can't recommend it. </p>
+
+<p>Thing to remember: how the computer stores decimal values causes floats (numbers with decimal places) to be inconsistent when doing math, use BigDecimal or the Money gem to be accurate and don't sweat it, everyone has hit this at one time or another.  </p>
 
   </section>
   <footer>
