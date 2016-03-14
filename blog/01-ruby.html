@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cora Hays-Magan</title>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../default.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> 
+<body>
+  <header>
+    <h1>Cora Hays-Magan</h1>
+    <img id="profile" src="../imgs/profile.jpg">
+    <nav>
+        <h2><a href="http://corainchicago.github.io/">Home</a><h2>
+        <h2><a href="http://corainchicago.github.io/#writing">Writing</a></h2>
+        <h2><a href="http://corainchicago.github.io/portfolio.html">Portfolio</a></h2>
+        <h2><a href="http://corainchicago.github.io/resume.html">Resume</a></h2>
+        <h2><a href="http://corainchicago.github.io/about.html">About Me</a></h2>
+      </nav>
+      <h3>An enthusiastic coder</h3>
+  </header>
+  <section>
+    <h1>Why Does Ruby Add Numbers Wrong?</h1>
+    <h2>Ruby and Floats: A lesson we all learn</h2>
+    <h4>March 8, 2016</h4>
+   </section> 
+<section>
+
+  <p>So, I was minding my own business, adding number up for fun in irb, when this happened: </p>
+
+  <pre class="ruby">
+    <code>
+      irb> 1.0 + 1.0
+      => 2.0
+      irb> 1.4 + 1.2
+      => 2.5999999999999996
+    </code>
+  </pre>
+
+  <p> This was not correct. Computers work off of logice and run off of 0 and 1, so the return should be 2.6 not 2.5999999999999996. Where did all the 9s come from? How come the computer did not add correctly? </p>
+</section>
+
+<section>
+  <h3>So What's Happening?</h3>
+  <p>Adding 1.0 to 1.0 produces the correct result, 2.0.  Adding 1.4 to 1.2 should produce 2.6, but instead produces 2.5999999999999996.   This is not correct, the amount of nines is infurating.  The reason for the error comes from decimal points being float objects in Ruby. Fixed numbers (Fixnum) can do math correctly in Ruby and float numbers do not reliable produce the correct result.   </p>
+
+  <p>In lay terms, a float is the way to represent a number that has a decimal point.</p>
+   <pre class="ruby">
+    <code>
+      irb> 1.class
+      => Fixnum
+      irb> 1.0.class
+      => Float
+    </code>
+  </pre>
+
+  <p>(the '.class' gives a user the class of an object and it terribly useful when debugging)</p>
+
+  <p>All of these are a representation of ONE in different formats.  If the number has a decimal, it's a Float and not a Fixnum (and does calculations correctly). The <a href="http://ruby-doc.org/core-2.2.0/Float.html"> Ruby docs </a> say this about Floats </p>
+  <p> "Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.
+
+  Floating point has a different arithmetic and is an inexact number." </p>
+  <p>Why would we need "an inexact number"? </p>
+  ...
+  <p>The answer is no, no we don't. It's like text aligned a bit off-center.</p>
+  <p>So most Ruby devs feel this at some point, they are minding their own business a coding an application which needs a decimal point. Normally this decimal point is for money.  Money is important and <span id="pow">POW</span> all hell breaks lose when the price of a list of times totals to an amount wiht five decimal places.</p>
+  </section>
+  <section>
+    <h3>But, Why?</h3>
+    <p>Floats are inacurate because of decisions make by men long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and ... well... Hindsight is 20 20. The way floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision.  And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'eesotoric'.  In summary, floats lack accuracy because they are stores in the computer's memory in a way which causes issues with math functions. </p>
+    <p>Then again, you are reading this and wondering when the solution comes about</p>
+  </section>
+  <section>
+    <h3>So, What's the solution</h3>
+
+    <p> If your first thought is to round the total, read further. I only know because I tried it, banged my head against the wall with getting a recurision method to work. </p>
+    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, Big Decimal is what you can use when you have a decimal point, need to calculate with it (and not just display). It has arbitrary-precision, not to be confused with single or double precision.  </p>
+
+  </section>
+  <footer>
+    <p>Contact Me: I code, I pair, and I share</p>
+    <address><a href="mailto: chaysmagan@gmail.com"> <img class ='icon' src="../imgs/Mail.png"></a>
+    <a href="https://twitter.com/CorainChicago"><img class ='icon' src="../imgs/Twitter.png"></a>
+    <a href="https://github.com/CorainChicago"><img class ='icon' src="../imgs/Github.png"></a>
+    <a href="https://www.linkedin.com/pub/cora-hays-magan/1a/532/577"><img class ='icon' src="../imgs/Linkedin.png"></a>
+    <a href ="https://speakerdeck.com/corainchicago"><img class ='icon' src="../imgs/speakerdeck.png"></a>
+    </address>
+  </footer>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-51171819-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
