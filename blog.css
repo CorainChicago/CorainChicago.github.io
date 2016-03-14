@@ -66,8 +66,9 @@ ul li{
 }
 
 code{
-    padding: 5%
-    right: 10%;
+	background-color: lightgrey;
+  padding: 5%
+  right: 10%;
 }
 
 code p{
