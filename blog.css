@@ -67,7 +67,6 @@ ul li{
 }
 
 code{
-	background-color: lightgrey;
   padding: 5%
   right: 10%;
 }
@@ -76,6 +75,9 @@ code p{
 	margin-right: 7%;
 	margin-left: 7%;
 }
+
+
+
 
 
 address{
