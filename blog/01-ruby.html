@@ -128,13 +128,13 @@
   <p>One last option is to use this code which is string conversion<p>
 
     <pre class="ruby">
-    <code>
-      irb> total = 1.4 + 1.2
-      => 2.5999999999999996
-      irb> '%.02f' % total
-      => "2.60"
-    </code>
-  </pre>
+      <code>
+        irb> total = 1.4 + 1.2
+        => 2.5999999999999996
+        irb> '%.02f' % total
+        => "2.60"
+      </code>
+    </pre>
 
   <p>This might be a lesson in "Don't use everything you find on Stackoverflow". It works, but is not idea.  I'm not the expert on this but used it in a code challenge and this feedback "Uses String conversions to compensate for floating point math issues" in the negative column.  Not everything that works is right. </p>
 
