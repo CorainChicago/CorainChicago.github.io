@@ -27,7 +27,7 @@
    </section> 
 <section>
 
-  <p>So, I was minding my own business, adding number up for fun in irb, when this happened: </p>
+  <p>So, I was minding my own business, adding numbers up for fun in irb, when this happened: </p>
 
   <pre class="ruby">
     <code>
@@ -45,7 +45,7 @@
   <h3>So What's Happening?</h3>
   <p>Adding 1.0 to 1.0 produces the correct result, 2.0.  Adding 1.4 to 1.2 should produce 2.6, but instead produces 2.5999999999999996. This is not correct, the amount of nines is infuriating. The reason for the error comes from decimal points being float objects in Ruby. Fixed numbers (Fixnum) can do math correctly in Ruby and float numbers do not reliably produce the correct result.</p>
 
-  <p>In lay terms, a float is the way to represent a number that has a decimal point.</p>
+  <p>In lay terms, a float is the way to represent a number that has a decimal point and fixnums are numbers without decimal points. </p>
    <pre class="ruby">
     <code>
       irb> 1.class
@@ -55,7 +55,7 @@
     </code>
   </pre>
 
-  <p>(the '.class' gives a user the class of an object and it terribly useful when debugging)</p>
+  <p>(the '.class' gives a user the class of an object and it is terribly useful when debugging)</p>
 
   <p>All of these are a representation of ONE in different formats.  If the number has a decimal, it's a Float and not a Fixnum (and does calculations correctly). The <a href="http://ruby-doc.org/core-2.2.0/Float.html"> Ruby docs </a> say this about Floats </p>
   <p> "Float objects represent inexact real numbers using the native architecture's double-precision floating point representation.
@@ -68,14 +68,14 @@
   </section>
   <section>
     <h3>But, Why?</h3>
-    <p>Floats are inaccurate because of decisions made by men long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and... well... hindsight is 20 20. The way floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision. And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'esoteric'. In summary, floats lack accuracy because they are stores in the computer's memory in a way which causes issues with math functions. </p>
+    <p>Floats are inaccurate because of decisions made by engineers long ago. Remember the 1s and 0s used in by computers?  A decision had to be made on how to store numbers and... well... hindsight is 20 20. The way floats are stored in computer memory (bits) causes inappropriate rounding. Stackoverflow has a few answers to this question, I like the one with an <a href="http://stackoverflow.com/questions/4055618/ruby-floating-point-errors">example</a>.  If you need a hint for researching, look up single and double precision. And if you want to (and you should) read about the history of number storage in computers, I suggest reading, breathing and then reading again. This is a good use of the word 'esoteric'. In summary, floats lack accuracy because they are stores in the computer's memory in a way which causes issues with math functions. </p>
     <p>Then again, you are reading this and wondering when the solution comes about</p>
   </section>
   <section>
     <h3>So, What's the solution</h3>
 
     <p> If your first thought is to round the total, read further. I only know because I tried it, banged my head against the wall with getting a recursion method to work. </p>
-    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">Big Decimal</a>.  Yes, BigDecimal is not a joke. BigDecimal is the class to use to calculate with decimals (and not just display). It has arbitrary-precision, not to be confused with single or double precision, arbitrary-precision is better.  <span id="humor"> I'm making fun of it a bit while I must acknowledge that how the computer stores data is important.  It's important to know about but maybe not invest too much energy into unless you are interested in it or run into a problem which might come from it.  It's similar to my idea of learning to make tortillas, yes it would be useful but no, the time </span> </p>
+    <p>In Ruby, we have a type of object called <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html">BigDecimal</a>.  Yes, BigDecimal is not a joke. BigDecimal is the class to use to calculate with decimals (and not just display). It has arbitrary-precision, not to be confused with single or double precision, arbitrary-precision is better.  <span id="humor"> I'm making fun of it a bit while I must acknowledge that how the computer stores data is important.  It's important to know about but maybe not invest too much energy into unless you are interested in it or run into a problem which might come from it.  It's similar to my idea of learning to make tortillas, yes it would be useful but no, the time </span> </p>
 
      <pre class="ruby">
       <code>
