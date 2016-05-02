@@ -21,10 +21,35 @@
   </header>
   <section>
     <h1>N + 1 Render Problem</h1>
-    <h2>Oh, is the page loading slow and hitting your database multiple times?/h2>
+    <h2>Oh, is the page loading slow and hitting your database multiple times? Yes/h2>
     <h4>April 13, 2016</h4>
    </section> 
 <section>
+  <p>N + 1 problems had only been in theory or whiteboarding discussions, until I ran into one in the render of a page.</p> 
+  <p>Here's what it looked like: </p>
+  <pre class="ruby">
+    <code>
+      Cat Load (0.6ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 20)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.3ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 21)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.3ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 22)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.5ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 23)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.5ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 24)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.4ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 25)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.4ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 26)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.5ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 23)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.5ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (3, 28)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+      Cat Load (0.4ms)  SELECT "cats".* FROM "cats" WHERE "cats"."id" IN (2)  ORDER BY (case when cats.ancestry is null then 0 else 1 end), cats.ancestry
+    </code>
+  </pre>  
+
+  <p><i>Lets be honest, the table loading was infinitely more boring than cats but was also production code - so you get cats.</i></p>
+
+  <p>There was a dropdown which required the loading of the entire `Cats` table to display and another part of the page render which required the display of `Cats`.  So, the table was being queried twice to be displayed twice.</p>
+
+  <p>No, no, no - not good. </p>
+
+  <p>So what's this `n + 1` problem?  </p>
+
 
   
 
