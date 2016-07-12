@@ -60,7 +60,7 @@
       <p>Add the uploader to the object needing the image.  For example: `rails g migration add_image_to_dogs image:string' adds the image field to the dogs table. </p>
       <p>Mount the uploader in the Model for the table. For example in `models/dogs.rb`:</p>
         <pre>
-          <code>
+          <code class="ruby">
             class Dog < ActiveRecord::Base
                 mount_uploader :image, ImageUploader
             end
@@ -71,16 +71,42 @@
       <p> When you ran the command `rails g uploader Image`, a folder and file was created in your application. Look at `app/uploaders/image_uploader.rb`.  Notice all the commented out code and read through what it does (rather handy and remember to be appreciative of all the open source contributors and maintainers who make gems like this). </p>
       <p>Here are the minimum lines to uncomment: </p>
       <p>`include CarrierWave::MiniMagick` - This pulls in the MiniMagick library to make photo manipulation a breeze. </p>
-      <p>`</p>
-
+      <p><pre>
+          <code class="ruby">
+            def store_dir
+              "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+            end
+          </code>
+        </pre></p>
+        <p>This gives Carrierwave a name convention and location for uploaded photos</p>
+      <p>`storage :file`  - This tells Carrierwave where to store the photos. You can try out your setup with the `storage :file` uncommented to make sure Carrierwave and the form are working correctly.  Once you are sure the photos are uploading (check your `public/uploads/` folder to see the uploaded photos), comment out the line and uncommnent `storage :fog`</p>
     </li>
-    <li></li>
-    <li></li>
+    <li><h3>Setup Amazon Web Services</h3>
+      <p>You will need an Amazon Web Services (AWS) account with an S3 bucket and User.  The User will have a Access Key Id,Secret Access Key and the S3 bucket will have a name (you create it) and region (I use "US Standard").  This is not the fun part but it's easier after you have it done once. </p>
+      <p>There's a whole process to sign up for AWS and your credit card will be involved.  You won't be charged at first since there's a free tier, but if you used enough storage or services, they will start to charge you.  This is a big reason to keep your key id and secret safe. </p>
+      <p>This is my go-to blog post about hiding keys and secrets in a rails app <a href="http://railsapps.github.io/rails-environment-variables.html">"Rails Environment Variables</a>.  I use the `local_env.yml` file method.</p>
+    </li>
+    <li><h3>Create your configuation file</h3>
+      <p>This is where I ended up searching through stackoverflow again and again. Here's the setup that worked for me:</p>
+      <p>'config/initializers/s3.rb`<pre>
+          <code class="ruby">
+            CarrierWave.configure do |config|
+              config.fog_credentials = {
+                  :provider               => 'AWS',
+                  :aws_access_key_id      => ENV['S3_KEY'],
+                  :aws_secret_access_key  => ENV['S3_SECRET'],
+                  :region                 => 'us-east-1'
+              }
+              config.fog_directory  = ENV['S3_BUCKET_NAME']
+            end
+          </code>
+        </pre></p>
+    </li>
   </ol>
 
+<p>Once I got the application storing files locally, settting up the S3 bucket storage meant reading error messages in my console, reviewing configuations for files and fog gems, and checking on my AWS bucket and account setup.  </p>
 
-
-
+<h2>Remember: It's only hard to do the first time, read the error messages, and HIDE you AWS key and secret!</h2>
 
 </section>
 <footer>
