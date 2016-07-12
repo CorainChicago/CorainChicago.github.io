@@ -3,13 +3,11 @@ body{
 	margin: 1%;
 }
 
-
 header{
 	margin-right: 8%;
 	margin-left: 8%;
 	margin-top: 3%;
 }
-
 
 header h1{
 	font-size: 6.0em;
@@ -105,14 +103,10 @@ tr{
 	left: 0px;
 }
 
-
-
 nav h2{
 	display: inline-block;
 	margin-right: 3%;
 }
-
-
 section{
 	margin-left: 8%;
 	margin-right: 8%;

@@ -30,20 +30,17 @@
   <p>After a bit of frustration, reading through documentation and stackoverflow answers, and creating then deleting buckets and user keys, I got it to work.</p>
 
   <p>Here's the steps from the front to back of a Rails app.</p>
-
   <ol>
     <li><h3>Add the upload to the form for the object in the view</h3>
-      <pre>
+      <pre class="ruby">
         <code>
-          <div class="field">
-            <%= f.label :image %><br>
-            <%= f.file_field :image %>
-          </div>
+          <%= f.label :image %>
+          <%= f.file_field :image %>
         </code>
       </pre>
       </li>
     <li><h3>Install Gems</h3>
-      <pre>
+      <pre class="ruby">Gemfile
         <code>
           # For photo upload
           gem 'carrierwave','0.10.0'
@@ -59,8 +56,8 @@
       <p>Run `rails generate uploader Image' to create the image uploader (or name it Photos or anything else you like. </p>
       <p>Add the uploader to the object needing the image.  For example: `rails g migration add_image_to_dogs image:string' adds the image field to the dogs table. </p>
       <p>Mount the uploader in the Model for the table. For example in `models/dogs.rb`:</p>
-        <pre>
-          <code class="ruby">
+        <pre class="ruby">
+          <code>
             class Dog < ActiveRecord::Base
                 mount_uploader :image, ImageUploader
             end
@@ -71,13 +68,13 @@
       <p> When you ran the command `rails g uploader Image`, a folder and file was created in your application. Look at `app/uploaders/image_uploader.rb`.  Notice all the commented out code and read through what it does (rather handy and remember to be appreciative of all the open source contributors and maintainers who make gems like this). </p>
       <p>Here are the minimum lines to uncomment: </p>
       <p>`include CarrierWave::MiniMagick` - This pulls in the MiniMagick library to make photo manipulation a breeze. </p>
-      <p><pre>
-          <code class="ruby">
+      <pre class="ruby">
+          <code>
             def store_dir
               "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
             end
           </code>
-        </pre></p>
+        </pre>
         <p>This gives Carrierwave a name convention and location for uploaded photos</p>
       <p>`storage :file`  - This tells Carrierwave where to store the photos. You can try out your setup with the `storage :file` uncommented to make sure Carrierwave and the form are working correctly.  Once you are sure the photos are uploading (check your `public/uploads/` folder to see the uploaded photos), comment out the line and uncommnent `storage :fog`</p>
     </li>
@@ -88,8 +85,9 @@
     </li>
     <li><h3>Create your configuation file</h3>
       <p>This is where I ended up searching through stackoverflow again and again. Here's the setup that worked for me:</p>
-      <p>'config/initializers/s3.rb`<pre>
-          <code class="ruby">
+        <pre class="ruby">
+          <code>config/initializers/s3.rb</code>
+          <code>
             CarrierWave.configure do |config|
               config.fog_credentials = {
                   :provider               => 'AWS',
@@ -100,7 +98,7 @@
               config.fog_directory  = ENV['S3_BUCKET_NAME']
             end
           </code>
-        </pre></p>
+        </pre>
     </li>
   </ol>
 
