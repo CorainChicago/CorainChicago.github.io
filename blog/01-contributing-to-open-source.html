@@ -27,13 +27,13 @@
 <section>
   <p>Driving back to Chicago from Christmas in Michigan, I pulled out my phone to review an open source project a contact sent me.  My Christmas included less coding than ideal and more food than ideal, resulting in me itching to either workout or code.  Since I was in the passenger seat of the car, code was the only option.  I looked up the project’s Github and started reading the documentation on the tiny screen of my phone. </p>  
 
-<p>There were so many words I didn't know.  Scanning through the first Readme, I was lost about what the code did.  What are these words?  No, I knew most of the words just one word was unclear  "ActiveModelSerializers".  I knew  ActiveRecord, Models, and had called the method ".serialize()" in Ajax.  So what did all the words mean when they came together? </p>  
+<p>There were so many words I didn't know.  Scanning through the first Readme, I was lost about what the code did beyond handle JSON generation.  What are these words?  No, I knew most of the words just one word was unclear  "ActiveModelSerializers".  I knew  ActiveRecord, Models, and had called the method ".serialize()" in AJAX.  So what did all the words mean when they came together? </p>  
 
-<p>Digging into the docs, I saw a link to more information on serializers.  Yes, the answer to the question "What does this code do" is just behind this link. I should know more about serializers to know what the ActiveModelSerializer does and then I can start to see how I can contribute to the project. </p>  
+<p>Clicking through the docs, I saw a link to more information on serializers.  Yes! The answer to the question "What does this code do" is just behind this link. I should know more about serializers to know what the ActiveModelSerializer does and then I can start to see how I can contribute to the project. </p>  
 
 <p>Unfortunately, the link didn't work. </p>  
 
-<p>Close phone, got to Indiana, opened phone again, and then I tried to inspect the page to see the code for the link (my phone doesn't support this and I don't think anyones does). I sat annoyed with not being able to even understand the docs and the broken link.  Finally, I realized I could fix this at home. </p>   
+<p>Closed the phone, thought terribly negative things about myself for not being able to understand the Readme, realized I was in Indiana (the halfway point), opened the phone again, and then I tried to inspect the page to see the code for the link (my phone doesn't support this and I don't think anyones does). I sat annoyed with not being able to even understand the docs and the broken link.  Finally, I realized I could fix this at home. </p>   
 
 <p>Why of course!  I'll just fix this link and then figure out the rest of the code. </p>  
 
@@ -42,20 +42,16 @@
 <p>So let's demystify contributing to open source projects for newbies:</p>  
 
 <ol>
-  <li> Read and Contributing documentation and review the closed pull requests.  This informs you of the project's process for pull requests, any tidbits of etiquette (like including 'ci --skip' when updating documentation) </li> 
-  <li>Fork the Repository - make a copy of it on your github</li>
-  <li>Clone the forked repository onto your local computer</li>
-  <li>Create a branch for your contribution
+  <li> Read the Contributing instructions and review the closed pull requests.  This informs you of the project's process for pull requests, any tidbits of etiquette (like including 'ci --skip' when updating documentation so the ci won't run all of the tests) </li>
+  <li>Create a branch for your contribution</li>
   <li>Make the change/fix to the code </li>
-  <li>git add  and commit </li>
-  <li>git push origin branch name</li>
+  <li> Add and commit your code in git</li>
+  <li>Push your branch with the changes</li>
   <li>Then make a pull request from your fork to the project's master branch </li>
   <li>Add a message to the pull request </li>
   <li>Be happy</li>
 </ol>
 
-
-<p>PS - Don't wait too long once you fork the original repo to make the pull request or else the pull request might not be able mergeable and you will have to fetch upstream </p>  
 
 <p>Back when first learning to code, I learned about open source.  I knew it existed and that finding a project to contribute to was good.  At the same time, my coding skills were low, my confidence in my ability low and I was learning about the negative side of open source and coding: sexism  and trolls. </p>  
 
@@ -63,13 +59,13 @@
 
 <p>Later on, I tried delving into open source again after learning more about coding and gaining more confidence, this time the volume of projects consumed my time.  So how did I finally get to submitting a pull request? </p>  
 
-<p>First, I became comfortable submitting pull requests.  This came by way of me creeping on classmate's blog sites, adding margins, line heights and fixing spelling.  The first time I submitted a pull request to a classmate’s repository, I was at work (a non-tech job), almost hid under my desk and then sent a message to the classmate apologizing for creeping on their code.  Yes, I hid and apologize for making their site look better.   After the first pull request, the second was easier and so was the third.  </p>  
+<p>First, I became comfortable submitting pull requests to projects I didn't own.  This came by way of me creeping on classmate's blog sites, adding margins, line heights and fixing spelling.  The first time I submitted a pull request to a classmate’s repository, I was at work (a non-tech job), almost hid under my desk and then sent a message to the classmate apologizing for creeping on their code.  Yes, I hid and apologized for suggesting a way to make their site look better.   After the first pull request, the second was easier and so was the third.  </p>  
 
 <p>So back to the broken link. </p>  
 
-<p>I forked the repository, cloned it to my desktop, made a branch, fixed the link, checked the link, pushed the branch up, made the pull request, and then happily waited.  I could be confident in a few things at the time I submitted the pull request, but the main one was that people would be kind to me.  I had a coffee scheduled with a maintainer and had met him previously.  He seemed cool, like funny blog posts about tech cool. </p>   
+<p>I forked the repository, cloned it to my desktop, made a branch, fixed the link, checked the link, commited, pushed the branch up, made the pull request, and then happily waited.  I could be confident in a few things at the time I submitted the pull request, but the main one was that <b>I knew people would be kind to me</b>.  I had a coffee scheduled with a maintainer and had met him previously.  He seemed cool, like funny blog posts about tech cool. </p>   
 
-<p>It was a cool exchange to get the pull request merged.  First, they thanked me.  Being appreciated for my efforts, while just 2-4 words that it took, shaped the rest of the exchanges with a nice tone in my head.  Next, they asked me to switched the fix from a hypertext link to a relative path (from "https://.." to "/path/to/document").  Finally, they encouraged me to rebase and squash my commits.  I had two commits to fix a link, a small number of commits and also a small change, which I took as an ideal setup to try out new git commands without messing up my code.  </p>  
+<p>We had a positive exchange to get the pull request merged.  First, they thanked me.  Being appreciated for my efforts, while just 2-4 words that it took, shaped the rest of the exchanges with a nice tone in my head.  Next, they asked me to switched the fix from a hypertext link to a relative path (from "https://.." to "/path/to/document").  This matched the format of their other links within the documentation. Finally, they encouraged me to rebase and squash my commits.  I had two commits to fix a link, a small number of commits and also a small change, which I took as an ideal setup to try out new git commands without messing up my code.  </p>  
 
 <p>Now I need to build an API in a Rails app to implement the ActiveModelSerializer. </p>  
 
@@ -77,10 +73,6 @@
 
 </section>
 
-<sectio>
-  <h4>Resources<h4>
-  <p>https://manishearth.github.io/blog/2016/01/03/making-your-open-source-project-newcomer-friendly/</p>
-</section>
 <footer>
     <p>Contact Me: I code, I pair, and I share</p>
     <address><a href="mailto: chaysmagan@gmail.com"> <img class ='icon' src="../imgs/Mail.png"></a>
