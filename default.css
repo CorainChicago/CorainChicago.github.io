@@ -103,6 +103,14 @@ tr{
 	left: 0px;
 }
 
+.code-snippet{
+  background-color: gray;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  color: white;
+}
+
+
 nav h2{
 	display: inline-block;
 	margin-right: 3%;

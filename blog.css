@@ -49,7 +49,9 @@ section p img{
 	margin-right: 2%;
 	height: 3em;
 }
-
+.code-snippet{
+  background-color: black;
+}
 
 nav{
 	margin-left: 2%;
