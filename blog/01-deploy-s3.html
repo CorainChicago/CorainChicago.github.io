@@ -53,7 +53,7 @@
       <p>Remember to run <span class="code-snippet">bundle install</span> or your terminal will yell at you.</p>
     </li>
     <li><h3>Install Carrierwave and create uploader (use the <a href="https://github.com/carrierwaveuploader/carrierwave">Carrierwave docs</a> - they are great for this).</h3>
-      <p>Run `rails generate uploader Image' to create the image uploader (or name it Photos or anything else you like. </p>
+      <p>Run <span class="code-snippet">rails generate uploader Image</span> to create the image uploader (or name it Photos or anything else you like. </p>
       <p>Add the uploader to the object needing the image.  For example: <br /><span class="code-snippet">rails g migration add_image_to_dogs image:string</span> <br />adds the image field to the dogs table. </p>
       <p>Mount the uploader in the Model for the table. For example in <span class="code-snippet">models/dogs.rb</span>:</p>
         <pre class="ruby">
@@ -76,11 +76,11 @@
           </code>
         </pre>
         <p>This gives Carrierwave a name convention and location for uploaded photos</p>
-      <p><span class="code-snippet">storage :file</span> - This tells Carrierwave where to store the photos. You can try out your setup with the `storage :file` uncommented to make sure Carrierwave and the form are working correctly.  Once you are sure the photos are uploading (check your `public/uploads/` folder to see the uploaded photos), comment out the line and uncommnent `storage :fog`</p>
+      <p><span class="code-snippet">storage :file</span> - This tells Carrierwave where to store the photos. You can try out your setup with the <span class="code-snippet">storage :file</span> uncommented to make sure Carrierwave and the form are working correctly.  Once you are sure the photos are uploading (check your <span class="code-snippet">public/uploads/</span> folder to see the uploaded photos), comment out the line and uncommnent <span class="code-snippet">storage :fog</span></p>
     </li>
     <li><h3>Setup Amazon Web Services</h3>
       <p>You will need an Amazon Web Services (AWS) account with an S3 bucket and User.  The User will have a Access Key Id,Secret Access Key and the S3 bucket will have a name (you create it) and region (I use "US Standard").  This is not the fun part but it's easier after you have it done once. </p>
-      <p>There's a whole process to sign up for AWS and your credit card will be involved.  You won't be charged at first since there's a free tier, but if you used enough storage or services, they will start to charge you.  This is a big reason to keep your key id and secret safe. </p>
+      <p>There's a whole process to sign up for AWS and your credit card will be involved.  You won't be charged at first since there's a free tier, but if you use enough storage or services, they will start to charge you.  This is a big reason to keep your key id and secret safe. </p>
       <p>This is my go-to blog post about hiding keys and secrets in a rails app <a href="http://railsapps.github.io/rails-environment-variables.html">"Rails Environment Variables</a>.  I use the <span class="code-snippet">local_env.yml</span> file method.</p>
     </li>
     <li><h3>Create your configuation file</h3>
