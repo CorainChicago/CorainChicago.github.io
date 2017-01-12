@@ -25,7 +25,12 @@
 	  <h4>January 12, 2017</h4>
 	 </section> 
 <section>
-
+	<p>I got feedback on a pull request which made me look deeper into click handlers and think about whether they are implemented once or multiple times.  It was a bit scary when the realization came that my code could wind up implementing multiple click handlers, all on the same class and doing the same damn thing.  Yikes!  Reasons why a code review is the best thing in the day. </p>
+	<p>So what was I doing? I had a table with a checkbox in a column and needed to know when a user clicks on a checkbox, holds down the shift key, and clicks on another checkbox to select a range of rows. /p>
+	<p>bad code vs. good code examples</p>
+	<p>behind the scenes what's happening</p>
+	<p>Nice references for further study</p>
+	<p>Moral of the story</p>
 </section>
 <footer>
 		<p>Contact Me: I code, I pair, and I share</p>
