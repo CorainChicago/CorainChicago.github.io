@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cora Hays-Magan</title>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../default.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> 
+<body>
+  <header>
+    <h1>Cora Hays-Magan</h1>
+    <img id="profile" src="../imgs/profile.jpg">
+    <nav>
+        <h2><a href="http://corainchicago.github.io/">Home</a><h2>
+        <h2><a href="http://corainchicago.github.io/#writing">Writing</a></h2>
+        <h2><a href="http://corainchicago.github.io/portfolio.html">Portfolio</a></h2>
+        <h2><a href="http://corainchicago.github.io/resume.html">Resume</a></h2>
+        <h2><a href="http://corainchicago.github.io/about.html">About Me</a></h2>
+      </nav>
+      <h3>An enthusiastic coder</h3>
+  </header>
+  <section>
+    <h1>Problems Repeat Themselves</h1>
+    <h2>aka: Document Solution or you will repeat the search</h2>
+    <h4>March 1, 2017</h4>
+   </section> 
+<section>
+  <p>Dear Future Self, </p>
+  <p>You got this message again?</p>
+  <img src="imgs/connection_error" alt="screen shot of terminal with PG_Connection Error">
+  <p>Yes, you have see it before.</p>
+  <p>Here's steps to debug:</p>
+    <ol>
+      <li>Check that the PID isn't still running and kill -9 it if running</li>
+        <p>ps auxwww | grep postgres   - no processes running</p>
+        <p>pg_ctl -D /usr/local/var/postgres status   - Checks the status of the server</p>
+        <p>kill -9 <PID NUMBER></p>
+      <li>Didn't work? Postgres's setup and/or configuration could be corrupted so brew will remove the old setup, overwrite any corrupted files or paths, and then install postgres, link it, and start the service.</li>
+        <p>Try brew</p>
+        <ol>
+          <li>brew uninstall postgres</li>
+          <li>brew install postgres</li>
+          <li>brew postinstall postgresql</li>
+          <li>brew doctor</li>
+          <li>brew link postgresql or brew link --overwrite postgresql</li>
+          <li>brew services start postgresql</li>
+        </ol>
+    </ol>
+  <p>Update if other errors or solutions are found or else you will pay. </p>
+  <p>Best of luck,</p>
+  <p>Past Self</p>
+</section>
+<footer>
+    <p>Contact Me: I code, I pair, and I share</p>
+    <address><a href="mailto: chaysmagan@gmail.com"> <img class ='icon' src="../imgs/Mail.png"></a>
+    <a href="https://twitter.com/CorainChicago"><img class ='icon' src="../imgs/Twitter.png"></a>
+    <a href="https://github.com/CorainChicago"><img class ='icon' src="../imgs/Github.png"></a>
+    <a href="https://www.linkedin.com/pub/cora-hays-magan/1a/532/577"><img class ='icon' src="../imgs/Linkedin.png"></a>
+    <a href ="https://speakerdeck.com/corainchicago"><img class ='icon' src="../imgs/speakerdeck.png"></a>
+    </address>
+  </footer>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-51171819-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
