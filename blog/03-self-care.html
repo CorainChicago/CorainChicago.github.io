@@ -32,9 +32,15 @@
   <p>Here's steps to debug:</p>
     <ol>
       <li>Check that the PID isn't still running and kill -9 it if running</li>
-        <p>ps auxwww | grep postgres   - no processes running</p>
-        <p>pg_ctl -D /usr/local/var/postgres status   - Checks the status of the server</p>
-        <p>kill -9 <PID NUMBER></p>
+        <pre>
+          <code>ps auxwww | grep postgres   - no processes running</code>
+          </pre>
+        <pre>
+          <code>pg_ctl -D /usr/local/var/postgres status   - Checks the status of the server</code>
+          </pre>
+       <pre>
+          <code>kill -9 *PID NUMBER*</code>
+          </pre>
       <li>Didn't work? Postgres's setup and/or configuration could be corrupted so brew will remove the old setup, overwrite any corrupted files or paths, and then install postgres, link it, and start the service.</li>
         <p>Try brew</p>
         <ol>
