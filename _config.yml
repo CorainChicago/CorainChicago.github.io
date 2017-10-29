@@ -2,7 +2,7 @@
 title: Cora in Chicago
 description: 'An enthusiastic coder'
 # url: 'http://joshgerdes.com/jekyll-uno'
-url: '/'
+url: 
 baseurl: '/corainchicago.github.io'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
