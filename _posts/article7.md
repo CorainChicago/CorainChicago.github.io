@@ -1,6 +1,6 @@
 +++
 showonlyimage = true
-draft = false
+draft = true
 image = "img/portfolio/a4-paper.jpg"
 date = "2017-11-21T18:25:22+05:30"
 title = "DevOps Days Chicago 2017: Feeling Responsible and Able"

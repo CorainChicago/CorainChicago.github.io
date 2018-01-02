@@ -2,11 +2,11 @@
 title:  "Angular 5 with Bootstrap"
 date:   "2018-01-02"
 categories: [code]
-tags: [angular, front-end]
+tags: [angular]
 ---
 
 My pet project uses Angular 5 for the client side and making it decent to look at became a struggle so I turned to Bootstrap.  
-
+<!--more-->
 
 I can layout a page decently but filling in the details so they don't look like mud is not my forte.  My pet project needed to look half-way decent so I turned to [Bootstrap](http://getbootstrap.com/).
 
