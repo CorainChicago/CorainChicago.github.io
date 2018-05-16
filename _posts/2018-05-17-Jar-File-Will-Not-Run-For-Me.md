@@ -2,7 +2,7 @@
 title:  "Jar File will Not Run For Me"
 date:   "2018-05-17"
 categories: [code, java]
-tags: [code]
+tags: [code, java]
 ---
 
 The jar file won't run for me... but it runs for everyone else. 
