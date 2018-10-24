@@ -1,0 +1,11 @@
+
+
+Here's the fix when 'cat' is a bson document:
+
+
+
+JsonWriterSettings settings = JsonWriterSettings.builder()
+						.int64Converter((value, writer) -> writer.writeNumber(value.toString()))
+						.dateTimeConverter((value, writer) -> writer.writeNumber(value.toString()))
+						.build();
+String json = cat.toJson(settings);
