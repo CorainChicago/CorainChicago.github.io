@@ -1,0 +1,3 @@
+In a spring batch project, to make a custom writer, here's how the class can be laid out.
+
+public class CustomMongoItemWriter extends MongoItemWriter<Cat> implements ItemWriteListener, ChunkListener {}
