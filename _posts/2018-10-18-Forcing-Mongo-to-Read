@@ -1,7 +1,20 @@
 ---
-title:  "Forcing Mongo to Read"
+title:  "Forcing Mongo to Read from Secondary"
 date:   "2018-10-18"
 categories: [code]
 tags: [mongo, database, spring]
 ---
 
+Situation: Mongo is very active with lots of reads and writes.  You want to be writing to the primary and read from the secondary.
+
+But how?
+
+Solution:
+
+spring:
+  data:
+    mongodb:
+      uri: '<uri for mongo databased>/?readPreference=secondary'
+     
+     
+It's the '/?readPreference=secondary' that forces it to read from secondary.
