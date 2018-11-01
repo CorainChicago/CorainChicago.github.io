@@ -1,0 +1,4 @@
+When building a dockerfile, if you see "Could not find or load main class org.apache.maven.wrapper.MavenWrapperMain"
+- Run this command in your main directory
+
+mvn -N io.takari:maven:wrapper
