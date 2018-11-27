@@ -1,0 +1,6 @@
+
+
+java.lang.NoSuchMethodError: org.springframework.boot.autoconfigure.web.ServerProperties$Servlet.getServletPrefix()Ljava/lang/String;
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getDispatcherServletPrefix(ServletApplicationFactory.java:98) ~[spring-boot-admin-client-2.0.3.jar:2.0.3]
+	at de.codecentric.boot.admin.client.registration.ServletApplicationFactory.getManagementBaseUrl(ServletApplicationFactory.java:75) ~[spring-boot-admin-client-2.0.3.jar:2.0.3]
+	at de.codecentric.boot.admin.client.registration.DefaultApplicationFactory.getHealthUrl(DefaultApplicationFactory.java:150) ~[spring-boot-admin-client-2.0.3.jar:2.0.3]
