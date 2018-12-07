@@ -25,7 +25,6 @@ forces the version in build
                     <target>10</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
     

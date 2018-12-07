@@ -11,7 +11,7 @@ After installing Docker Community edition for Mac and pulling the Cloudera/Quick
 
 No Bueno
 
-I saw an error about my configuration (which I had not touched):
+I saw an error about my configuration (which I had not touched!):
 
 Configuration files located in /etc/hue/conf.empty
 
