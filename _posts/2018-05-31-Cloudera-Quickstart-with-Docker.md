@@ -2,7 +2,7 @@
 title:  "Cloudera/Quickstart with Docker"
 date:   "2018-05-31`"
 categories: [code, docker, cloudera, hadoop]
-tags: [code, docker, cloudera, hadoop]
+tags: [docker]
 ---
 
 Yes, it is so frustrating to pull down example code and it has a error on startup.  

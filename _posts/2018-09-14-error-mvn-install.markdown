@@ -2,7 +2,7 @@
 title:  "Error in the Maven Install"
 date:   "2018-09-14"
 categories: [code]
-tags: [spring]
+tags: [maven]
 ---
 
 This error occurred when I was running 'mvn clean build' and getting the error below:

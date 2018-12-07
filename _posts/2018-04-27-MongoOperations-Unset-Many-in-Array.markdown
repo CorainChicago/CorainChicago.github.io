@@ -1,8 +1,8 @@
 ---
 title:  "MongoOperations: Unset Many in Array"
 date:   "2018-04-27"
-categories: [code]
-tags: [java, mongo]
+categories: [mongo, database]
+tags: [mongo]
 ---
 
 If you need to 'unset' a field in an object for many objects in an array, use this to loop:
