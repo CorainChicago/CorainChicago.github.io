@@ -1,0 +1,3 @@
+ZipFile invalid LOC header (bad signature)
+
+Means to delete your '.m2' repository locally and run 'mvn clean install' to recreate it.
