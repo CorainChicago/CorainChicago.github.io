@@ -1,0 +1,5 @@
+https://twitter.com/mattstratton/status/1153769051769987073
+
+Micrometer had documentation referencing their codebase without a link. I tweeted about it to Datadog and had positive and helpful responses.The final result from twitter was an issue created in the micrometer repo.
+
+Using part of my hour of code a night, I added the link and made a pr which then merged. 
