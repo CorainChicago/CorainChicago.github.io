@@ -1,0 +1,65 @@
+Running mysql in docker with:
+
+```
+version: "3"
+
+services:
+
+  mysqltest:
+    env_file: .env
+    restart: always
+    image: mysql:5.6
+    ports:
+      - "23306:3306"
+    environment:
+      - MYSQL_PASSWORD=${PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${PASSWORD}
+    volumes:
+      - "./database:/docker-entrypoint-initdb.d"
+    networks:
+      - test-net
+```
+
+
+I started to see this on mysql startup:
+
+```
+
+2019-10-25 15:37:17 33 [ERROR] InnoDB: Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data!
+mysqltest_1               | 2019-10-25 15:37:17 33 [ERROR] Plugin 'InnoDB' init function returned error.
+mysqltest_1               | 2019-10-25 15:37:17 33 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+mysqltest_1               | 2019-10-25 15:37:17 33 [ERROR] Unknown/unsupported storage engine: InnoDB
+mysqltest_1               | 2019-10-25 15:37:17 33 [ERROR] Aborting
+mysqltest_1               | 
+mysqltest_1               | 2019-10-25 15:37:17 33 [Note] Binlog end
+mysqltest_1               | 2019-10-25 15:37:17 33 [Note] /usr/sbin/mysqld: Shutdown complete
+mysqltest_1               | 
+mysqltest_1               | Initializing database
+mysqltest_1               | 2019-10-25 15:37:43 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+mysqltest_1               | 2019-10-25 15:37:43 0 [Note] Ignoring --secure-file-priv value as server is running with --bootstrap.
+mysqltest_1               | 2019-10-25 15:37:43 0 [Note] /usr/sbin/mysqld (mysqld 5.6.45) starting as process 33 ...
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Using atomics to ref count buffer pool pages
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: The InnoDB memory heap is disabled
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Memory barrier is not used
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Using Linux native AIO
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Using CPU crc32 instructions
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+mysqltest_1               | 2019-10-25 15:37:43 33 [Note] InnoDB: Completed initialization of buffer pool
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] InnoDB: auto-extending data file ./ibdata1 is of a different size 0 pages (rounded down to MB) than specified in the .cnf file: initial 768 pages, max 0 (relevant if non-zero) pages!
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] InnoDB: Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data!
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] Plugin 'InnoDB' init function returned error.
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] Unknown/unsupported storage engine: InnoDB
+mysqltest_1               | 2019-10-25 15:37:43 33 [ERROR] Aborting
+
+```
+
+
+So I googled and found this issue: https://github.com/docker-library/mysql/issues/345
+
+It said to run this command: docker rmi $(docker images -f "dangling=true" -q)
+(command removed docker images that are dangling)
+
+Then my database started up just fine. :)
