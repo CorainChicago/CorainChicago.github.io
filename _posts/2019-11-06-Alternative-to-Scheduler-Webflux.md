@@ -16,18 +16,18 @@
     public void start() {
         LOGGER.info("called start");
         startRunning();
-        processEvents();
+        processCats();
 
     }
     
 
-    public void processEvents() {
+    public void processCats() {
         final ConnectableFlux<CatObject> connectableFlux = getConnectableFlux();
         connectableFlux.parallel()
                 .runOn(Schedulers.fromExecutor(executor))
                 .flatMap(e -> Flux.just(e)
-                        .flatMap(eventDO -> {
-                            LOGGER.info("json: {}", eventDO);
+                        .flatMap(cat -> {
+                            LOGGER.info("json: {}", cat);
                             if (StringUtils.isNotBlank(e.toString())) {
                                 try {
                                     LOGGER.info("This is where I publish e {}", e);
